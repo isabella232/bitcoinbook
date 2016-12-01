@@ -1,0 +1,63 @@
+[[appdx_bitcore]]
+[appendix]
+
+=== Bitcore Usage
+
+Bitcore is a suite of tools provided by BitPay. The goal of the Bitcore project is to provide easy-to-use tools for Bitcoin/Blockchain developers. Almost all of the code for Bitcore is written in Javascript. There are some modules written specifically for NodeJS. Finally, the "node" module of Bitcore includes Bitcoin Core's C++ code. This is the very same code that most full nodes would deploy, therefore it is fully bug-for-bug compatible with Bitcoin Core.
+
+=== Bitcore's Feature List
+
+* Bitcoin Full Node (bitcore-node)
+* Full Bitcoin Block Explorer (insight)
+* Block Explorer (insight-api)
+* Block, Transaction, Wallet Utilities (bitcore-lib)
+* Hierarchically Derived Keys (bitcore-lib)
+* Communicating directly with Bitcoin's P2P network (bitcore-p2p)
+* Mnemonic Generation (bitcore-mnemonic)
+* Payment Protocol (bitcore-payment-protocol)
+* Message Verification and Signing (bitcore-message)
+* Elliptic Curve Integrated Encryption Scheme (bitcore-ecies)
+* Wallet Service (bitcore-wallet-service)
+* Wallet Client (bitcore-wallet-client)
+* Playground (bitcore-playground)
+* Integrating Services directly with Bitcoin Core (bitcore-node)
+
+=== Bitcore Library Examples
+
+==== Prerequisities
+
+* NodeJS or use our hosted online playground (https://bitcore.io/playground)
+
+If using NodeJS:
+
+----
+$ npm install -g bitcore-lib
+----
+
+==== Wallet Examples using bitcore-lib
+
+Creating a new bitcoin address
+
+----
+$ node
+> var PrivateKey = require('bitcore-lib').PrivateKey
+> var privateKey = new PrivateKey()
+> var address = privateKey.toAddress().toString()
+> address
+----
+
+Continuing the node terminal session from before:
+Is the address you just created valid (able to be spent to)?
+
+----
+> var Address = require('bitcore-lib').Address
+> Address.isValid(address)
+----
+
+Blocks
+
+----
+
+----
+
+
